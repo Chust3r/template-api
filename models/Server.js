@@ -8,8 +8,8 @@ import morgan from 'morgan'
 config()
 
 export class Server {
-	app = express()
-	port = 5000
+	#app = express()
+	#port = process.env.PORT || 5000
 
 	constructor() {
 		this.middlewares()
@@ -17,17 +17,17 @@ export class Server {
 	}
 
 	middlewares() {
-		this.app.use([express.json(), cors(), morgan('dev')])
-		loadMiddlewares(this.app)
+		this.#app.use([express.json(), cors(), morgan('dev')])
+		loadMiddlewares(this.#app)
 	}
 
 	routes() {
-		loadRoutes(this.app)
+		loadRoutes(this.#app)
 	}
 
 	listen() {
-		this.app.listen(this.port, () => {
-			console.log(`Server run in http://localhost:${this.port}`)
+		this.#app.listen(this.#port, () => {
+			console.log(`Server run in http://localhost:${this.#port}`)
 		})
 	}
 }
