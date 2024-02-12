@@ -31,7 +31,7 @@ Project structure
 ├── lib                             # Utilities
 ├── middlewares                     # Middlewares
 ├── models                          # Database models (optional)
-|  └── server.js                    # Sever
+|  └── server.js                    # Server
 ├── routes                          # Routes
 ├── prisma 
 |  └── schema.prisma                # Prisma models & DataBase Connection
